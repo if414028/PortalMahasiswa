@@ -1,0 +1,78 @@
+.cari-button {
+    background-color: #ffca3a ; /* Green */
+    border: none;
+    color: white;
+    margin-top: 3px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.cari-button:hover {
+    background-color: #e8b835; /* Green */
+    color: white;
+}
+
+.create-button {
+    background-color: #8ac926 ; /* Green */
+    border: none;
+    color: white;
+    margin-top: 3px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.create-button:hover {
+    background-color: #71a520; /* Green */
+    color: white;
+}
+
+.delete-button {
+    background-color: #ff595e ; /* Green */
+    border: none;
+    color: white;
+    margin-top: 3px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.delete-button:hover {
+    background-color: #e85156; /* Green */
+    color: white;
+}
+
+.big-button{
+    background-color: #ffab00 ; /* Green */
+    border: none;
+    color: white;
+    width: 245px;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-bottom: solid 5px #ffab00;
+}
+
+.big-button:hover{
+    color: white;
+    border-bottom: solid 5px #29335c;
+}
+
+.register-menu {
+    width: 500px;
+    padding: 2% 0 0;
+    margin: auto;
+}
