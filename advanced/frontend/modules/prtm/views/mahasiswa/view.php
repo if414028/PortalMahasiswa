@@ -7,17 +7,15 @@ use yii\widgets\DetailView;
 /* @var $model frontend\modules\prtm\models\Mahasiswa */
 
 $this->title = $model->id_mahasiswa;
-$this->params['breadcrumbs'][] = ['label' => 'Mahasiswas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mahasiswa-view">
+<div class="content-background">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id_mahasiswa], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id_mahasiswa], ['class' => 'cari-button']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id_mahasiswa], [
-            'class' => 'btn btn-danger',
+            'class' => 'delete-button',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
@@ -29,7 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id_mahasiswa',
-            'id_prodi',
+            [
+                'attribute' => 'id_prodi',
+                'label' => 'Prodi',
+                'value' => function($model){
+                    return $model->idProdi->nama_prodi;
+                }
+            ],
             'alamat',
             'bio',
             'nama_cantik',

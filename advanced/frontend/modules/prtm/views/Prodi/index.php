@@ -7,16 +7,15 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\modules\prtm\search\ProdiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Prodis';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Program Studi Institut Teknologi Del';
 ?>
-<div class="prodi-index">
+<div class="content-background">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Prodi', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambahkan Prodi', ['create'], ['class' => 'create-button']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

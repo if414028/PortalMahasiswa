@@ -7,16 +7,15 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\modules\prtm\search\MahasiswaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Mahasiswas';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Daftar Mahasiswa Institut Teknologi Del';
 ?>
-<div class="mahasiswa-index">
+<div class="content-background">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create mahasiswa', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create mahasiswa', ['create'], ['class' => 'create-button']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

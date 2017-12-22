@@ -6,11 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\prtm\models\Prodi */
 
-$this->title = 'Create Prodi';
-$this->params['breadcrumbs'][] = ['label' => 'Prodis', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Tambah Prodi';
 ?>
-<div class="prodi-create">
+<div class="content-background">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

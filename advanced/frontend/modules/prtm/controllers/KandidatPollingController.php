@@ -33,10 +33,11 @@ class KandidatPollingController extends Controller
      * Lists all kandidat-polling models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id_polling)
     {
         $searchModel = new KandidatPollingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->where(['id_polling' => $id_polling]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

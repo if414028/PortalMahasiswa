@@ -2,6 +2,7 @@
 
 namespace frontend\modules\prtm\models;
 
+use frontend\modules\prtm\search\ProdiSearch;
 use Yii;
 
 /**

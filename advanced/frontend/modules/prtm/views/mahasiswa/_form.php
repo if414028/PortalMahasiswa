@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+
 
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\prtm\models\Mahasiswa */
@@ -12,7 +15,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_prodi')->textInput() ?>
+    <?= $form->field($model, 'id_prodi')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(\frontend\modules\prtm\models\Prodi::find()->all(),'id_prodi','nama_prodi'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Pilih Prodi'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
+    ?>
 
     <?= $form->field($model, 'alamat')->textInput(['maxlength' => true]) ?>
 
@@ -22,18 +33,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput() ?>
-
-    <?= $form->field($model, 'updated_by')->textInput() ?>
-
-    <?= $form->field($model, 'deleted')->textInput() ?>
-
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'create-button' : 'cari-button']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

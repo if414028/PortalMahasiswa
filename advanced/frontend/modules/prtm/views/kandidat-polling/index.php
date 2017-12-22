@@ -7,35 +7,61 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\modules\prtm\search\KandidatPollingSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Kandidat Pollings';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Kandidat Polling';
 ?>
-<div class="kandidat-polling-index">
+<div class="content-background">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Kandidat polling', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Kandidat Polling', ['create'], ['class' => 'create-button']) ?>
     </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <br/>
+    <br/>
+    <br/>
 
-            'id_kandidat_polling',
-            'motivasi',
-            'foto_kandidat_polling',
-            'id_mahasiswa',
-            'id_polling',
-            // 'created_at',
-            // 'updated_at',
-            // 'created_by',
-            // 'updated_by',
-            // 'deleted',
+    <div class="container">
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <?php
+            foreach ($dataProvider->models as $dp)
+            {
+                echo '<div class="col-md-4">'
+                    .'<div class="box box-default">'
+                    .'<div class="box-body">'
+                    .'<div class="row">'
+                    .'<center>'
+                    .'<img src="'
+                    .'uploads/' . $dp->foto_kandidat_polling
+                    .'" class="img-thumbnail" width="100px">'
+                    .'</center>'
+                    .'<div class="row">'
+                    .'<center>'
+                    .'<h4>'
+                    .Html::a($dp->idMahasiswa->username, ['view', 'id'=>$dp->id_kandidat_polling])
+                    .'</h4>'
+                    .'<p>'
+                    .'<b>Motivasi:</b> '
+                    .Html::decode($dp->motivasi)
+                    .'</p>'
+                    .'</div>'
+                    .'</div>'
+                    .'</div>'
+                    .'</div>'
+                    .'</div>';
+            }
+            ?>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-8">
+
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
 </div>
